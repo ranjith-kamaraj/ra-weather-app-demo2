@@ -3,6 +3,7 @@ const request = require('request');
 const { get } = require('lodash');
 
 const { WEATHER_STACK_BASE_URL, WEATHER_STACK_ACCESS_KEY } = process.env;
+console.log(WEATHER_STACK_BASE_URL);
 
 const forecast = (latitude, longtitude, callback) => {
     let url = `${WEATHER_STACK_BASE_URL}/current?access_key=${WEATHER_STACK_ACCESS_KEY}&query=${latitude},${longtitude}`;
