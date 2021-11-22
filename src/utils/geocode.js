@@ -8,8 +8,11 @@ console.log("Map Box URL" + MAPBOX_BASE_URL);
 
 const geocode = (address, callback) =>{
     let mapBoxUrl = `${MAPBOX_BASE_URL}/geocoding/v5/mapbox.places/${address}.json?limit=1&access_token=${MAPBOX_ACCESS_KEY}`;
+    console.log("Map Box Main URL" + mapBoxUrl);
 
     request({ url: mapBoxUrl, json: true }, (error, response) => {
+    console.log("Geo Code Response" + JSON.stringify(response));    
+        
     if (response && response.body.features.length == 0) {
         callback(`Unable to find the location service!`, undefined)
     }
